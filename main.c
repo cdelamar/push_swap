@@ -34,7 +34,9 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	ft_init_stack(&stack_a, argc, argv);
-	if (ft_lstsize(stack_a) <= 5)
+	if (ft_sorted(stack_a))
+		ft_free_list(&stack_a);
+	else if (ft_lstsize(stack_a) <= 5)
 	{
 		ab.stack_a = stack_a;
 		ab.stack_b = stack_b;
