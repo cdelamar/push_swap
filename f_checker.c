@@ -81,11 +81,11 @@ void	ft_args_check(int argc, char **argv)
 	{
 		buf = ft_atol(args[i]);
 		if (is_number(args[i]) == false)
-			ft_error(NUM_FAILURE);
+			ft_error_free(NUM_FAILURE, args);
 		if (appear_twice(buf, args, i) == true)
-			ft_error(DOUBLON_FAILURE);
+			ft_error_free(DOUBLON_FAILURE, args);
 		if (buf < -2147483648 || buf > INT_MAX)
-			ft_error(INT_SIZE_FAILURE);
+			ft_error_free(INT_SIZE_FAILURE, args);
 		i++;
 	}
 	if (argc == 2)

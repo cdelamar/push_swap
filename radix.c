@@ -27,7 +27,6 @@ int	set_bits_max(t_list *stack)
 {
 	int	bits_max;
 	int	max;
-	int	buf;
 
 	bits_max = 0;
 	max = stack->index;
@@ -37,7 +36,6 @@ int	set_bits_max(t_list *stack)
 			max = stack->index;
 		stack = stack->next;
 	}
-	buf = max;
 	while (max)
 	{
 		max /= 2;

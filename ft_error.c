@@ -18,6 +18,13 @@ int	ft_error(char *s)
 	exit(EXIT_FAILURE);
 }
 
+int ft_error_free(char *s, char **args)
+{
+	ft_putendl_fd(s, 2);
+	ft_free_tab(args);
+	exit(EXIT_FAILURE);
+}
+
 void	ft_putendl_fd(char *str, int fd)
 {
 	ft_putstr_fd(str, fd);
@@ -29,7 +36,6 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 
-// by master Chayanne Gwenael Wesley etc Godard
 void	ft_putstr_fd(char *str, int fd)
 {
 	write(fd, str, ft_strlen(str));

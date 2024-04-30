@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 	t_sort	sort;
-	t_stack	aetb;
+	t_stack	ab;
 
 	if (argc < 2 || argv[1] == NULL || argv[1][0] == '\0')
 		ft_error(ARGC_FAILURE);
@@ -36,10 +36,10 @@ int	main(int argc, char **argv)
 	ft_init_stack(&stack_a, argc, argv);
 	if (ft_lstsize(stack_a) <= 5)
 	{
-		aetb.stack_a = stack_a;
-		aetb.stack_b = stack_b;
-		aetb = simple_sort(aetb);
-		ft_free_all(aetb.stack_a, aetb.stack_b, &sort);
+		ab.stack_a = stack_a;
+		ab.stack_b = stack_b;
+		ab = simple_sort(ab);
+		ft_free_all(ab.stack_a, ab.stack_b, &sort);
 	}
 	else
 		radix(stack_a, stack_b, &sort);
